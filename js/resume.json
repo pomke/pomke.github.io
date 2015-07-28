@@ -1,0 +1,245 @@
+{
+    "startYear" : 1999,
+    "endYear" : 2014,
+    "exp" : [
+        {
+            "title" : "MUD Development",
+            "id" : "games",
+            "years" : 5,
+            "year" : 1999,
+            "children" : [
+                {
+                    "title" : "MUDs scripting (LPC, Diku, Custom)",
+                    "offset" : 0,
+                    "years" : 5
+                }
+            ]
+        },
+        {
+            "title" : "FrontEnd: HTML / CSS / Javascript",
+            "id" : "frontend",
+            "years" : 15,
+            "year" : 1999,
+            "children" : [
+                {
+                    "title" : "Vanilla DOM (DHTML)",
+                    "years" : 6,
+                    "offset" : 0
+                },
+                {
+                    "title" : "MochiKit",
+                    "years" : 5,
+                    "offset" : 3
+                },
+                {
+                    "title" : "jQuery",
+                    "years" : 3,
+                    "offset" : 8 
+                },
+                {
+                    "title" : "Ender.js",
+                    "years" : 2,
+                    "offset" : 9
+                },
+                {
+                    "title" : "Knockout.js",
+                    "years" : 2,
+                    "offset" : 11
+                },
+                {
+                    "title" : "Angular.js",
+                    "years" : 3,
+                    "offset" : 12
+                }
+
+            ]
+        },
+        {
+            "title" : "Python",
+            "id" : "python",
+            "years" : 13,
+            "year" : 2001,
+            "children" : [
+                {
+                    "title" : "Twisted",
+                    "years" : 10,
+                    "offset" : 1
+                },
+                {
+                    "title" : "Zope",
+                    "years" : 9,
+                    "offset" : 1
+                },
+                {
+                    "title" : "Django",
+                    "years" : 2,
+                    "offset" : 8
+                },
+                {
+                    "title" : "WSGI / Micro Frameworks",
+                    "years" : 4,
+                    "offset" : 9
+                }
+            ]
+        },
+        {
+            "title" : "Javascript",
+            "id" : "javascript",
+            "years" : 15,
+            "year" : 1999,
+            "children" : [
+                {"title" : "DOM/Browser JS",
+                    "years" : 15,
+                    "offset" : 0
+                },
+                {
+                    "title" : "Node.js",
+                    "years" : 3,
+                    "offset" : 12
+                },
+                {
+                    "title" : "Gecko / GRE scripting",
+                    "years" : 4,
+                    "offset" : 3
+                }
+            ]
+        },
+        {
+            "title" : "Databases",
+            "id" : "databases",
+            "years" : 15,
+            "year" : 1999,
+            "children" : [
+                {
+                    "title" : "Mysql",
+                    "years" : 5,
+                    "offset" : 0
+                },
+                {
+                    "title" : "Postgres",
+                    "years" : 10,
+                    "offset" : 5
+                },
+                {
+                    "title" : "BerkleyDB",
+                    "years" : 2,
+                    "offset" : 5
+                },
+                {
+                    "title" : "SqlLite",
+                    "years" : 3,
+                    "offset" : 8
+                },
+                {
+                    "title" : "Riak",
+                    "years" : 1,
+                    "offset" : 12
+                },
+                {
+                    "title" : "MongoDB",
+                    "years" : 3,
+                    "offset" : 12
+                }
+
+            ]
+        },
+        {
+            "title" : "Full Text Search",
+            "id" : "search",
+            "years" : 11,
+            "year" : 2003,
+            "children" : [
+                {
+                    "title" : "Lucene / Solr",
+                    "years" : 8,
+                    "offset" : 0
+                },
+                {
+                    "title" : "ElasticSearch",
+                    "years" : 3,
+                    "offset" : 8
+                }
+            ]
+        },
+        {
+            "title" : "AWS",
+            "id" : "aws",
+            "years" : 4,
+            "year" : 2010,
+            "children" : [
+                {
+                    "title" : "EC2",
+                    "years" : 4,
+                    "offset" : 0
+                },
+                {
+                    "title" : "S3",
+                    "years" : 4,
+                    "offset" : 0
+                },
+                {
+                    "title" : "CloudFront",
+                    "years" : 4,
+                    "offset" : 0
+                }
+
+            ]
+        },
+        {
+            "title" : "Linux",
+            "id" : "linux",
+            "years" : 15,
+            "year" : 1999,
+            "children" : [
+                {
+                    "title" : "Redhat",
+                    "years" : 2,
+                    "offset" : 0
+                },
+                {
+                    "title" : "Debian",
+                    "years" : 4,
+                    "offset" : 2
+                },
+                {
+                    "title" : "Ubuntu",
+                    "id" : "",
+                    "years" : 9,
+                    "offset" : 6
+                }
+            ]
+        },
+        {
+            "title" : "Leadership",
+            "id" : "leadership",
+            "years" : 12,
+            "year" : 2002,
+            "children" : [
+                {
+                    "title" : "Development Leader",
+                    "id" : "",
+                    "years" : 6,
+                    "offset" : 0
+                },
+                {
+                    "title" : "Architect",
+                    "id" : "",
+                    "years" : 2,
+                    "offset" : 6
+                },
+                {
+                    "title" : "Founder",
+                    "years" : 4,
+                    "offset" : 8
+                },
+                {
+                    "title" : "CTO",
+                    "years" : 3,
+                    "offset" : 9 
+                }
+            ]
+        }
+        
+    ]
+}
+

@@ -1,0 +1,609 @@
+<!DOCTYPE HTML>
+<html >
+<head>
+<title>Resume - Pomke Nohkan</title>
+<meta charset="utf-8">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,900" rel="stylesheet" />
+<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+<script src="js/modernizr.custom.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/resume.js"></script>
+<link rel="stylesheet" href="css/skel-noscript.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style-desktop.css" />
+<link rel="stylesheet" href="css/component.css" />
+
+</head>
+<body ng-app='resume' class="homepage">
+
+<div class="wrapper wrapper-style2">
+    <div class="container">
+        <div class="row">
+            <div class="12u">
+
+                <!-- Main -->
+                <div id="main">
+
+
+                    <section id="features">
+                        <header class="style1">
+                            <h2 class='resume'>Résumé</h2>
+                            <h2 class='name'>Pomke Nohkan</h2>
+                            <br/>
+                            <br/>
+                            <p class='intro'>Hi there! I am a web architect, engineer and development leader with fifteen years commercial 
+                            experience building scalable web applications using open source software.  My speciality is the development of 
+                            robust systems designed for reliability, security, scalability and maintainability, using modern high-level 
+                            languages such as JavaScript (Node.js) and Python. I am based in the mountains, east of Melbourne, Australia.</p>
+
+                            <p class='intro'>I'm big on functional and asynchronous programming methodologies for building massively
+                            scalable services. This is why much of my experience has been with frameworks such as Twisted Python and Node.js. 
+                            This doesn't mean I'm unfamiliar with OO or threaded programming, I just believe in the right tools 
+                            for the right job.</p>
+
+                            <p class='intro'>I am passionate about diversity and love encouraging others to learn programming. I believe the 
+                            internet is a tool for liberation that can be given to anyone to empower them to have a voice in the global 
+                            community.</p>
+                            <br/> <br/>
+                            <p>
+                                <a target='blank' href='http://github.com/pomke'><span class='faticon icon-github'></span></a>
+                                <a target='blank' href='http://twitter.com/pomke'><span class='faticon icon-twitter'></span></a>
+                            </p>
+                        </header>
+
+                        <!-- Experience Boxes -->
+                        <header class="style1">
+                            <h2>Experience Timeline</h2>
+                            <p class="byline">Experience with various tech, click to explore</p>
+                        </header>
+
+                        <ul class='exp' ng-controller='ExperienceController'>
+                            <li  ng-repeat='year in years'>
+                            <div class='label'>{{ year.year }}</div>
+                            <div class='item w{{item.years}} {{item.id}}' ng-class='{selected : currentItemId == item.id}' ng-repeat='item in year.items' ng-click='expandItem(item)'>
+                                <span><strong>{{item.years}}</strong> years of {{item.title}}</span>
+                                <div class='details o{{sub.offset}} w{{sub.years}}' ng-repeat='sub in item.children'>
+                                    <span><strong>{{sub.years}}y</strong> {{sub.title}}</span>
+                                    <span class='ball left'>&nbsp;</span>
+                                    <span class='ball right'>&nbsp;</span>
+                                </div>
+                            </div>
+                            </li>
+                        </ul>
+                        <div class='clear'></div>
+                        <br/> <br/> <br/> <br/>
+                        <!-- /Experience Boxes -->
+
+                        <!-- Career Timeline -->
+                        <header class="style1">
+                            <h2>Career Timeline</h2>
+                            <p class="byline">Commercial development work</p>
+                        </header>
+                        <ul class="cbp_tmtimeline" ng-controller='CareerController'>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>June 2014</span><span>December 2011</span><span>2 &half; years</span><span>Chief<br/>Technical<br/>Officer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-js" title="Node.js is so awesome, no really, it's the knees of bees!"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Small World Social</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Node.js</li>
+                                            <li>MongoDB</li>
+                                            <li>AWS (EC2, S3)</li>
+                                            <li>Elastic Search</li>
+                                            <li>AngularJS</li>
+                                            <li>Video</li>
+                                            <li>One-Page-Apps</li>
+                                            <li>Mobile</li>
+                                            <li>Google Glass</li>
+                                            <li>iBeacons</li>
+                                            <li>Salesforce</li>
+
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p>Designed and built a bespoke, scalable content delivery platform for online learning
+                                        and engagement, used by Fortune 500 pharmaceutical and cool technology companies around the world.</p>
+
+                                        <p>Drove a community engagement program to build company brand awareness in the development community in
+                                        Australia through hosted events and sponsorships.</p>
+
+                                        <p>Recruited and lead a new team of engineers using agile practices to 
+                                        deliver a high quality product that never goes down, which reduced content production times from 2-3 months
+                                        to 2-3 weeks.</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='12u'>
+                                        <div class='readmore' ng-click="more('sws')">Read more..</div> 
+                                        <div class='more' ng-class="{open : open['sws']}">
+                                            <p>I arrived at Small World Social in late 2011, a small online advertising company that had
+                                            branched out into online training. They had built some custom training modules (video & Flash) on 
+                                            top of a shopping cart system built in Python and Django by contractors, however the system was very 
+                                            difficult to use for the creative staff, was buggy and would crash under load (ORM death), and 
+                                            the contractors had since left.</p>
+
+                                            <p>I spent 4-6 weeks shoring up and re-factoring the Django implementation, however it was 
+                                            obviously not delivering any benefit for the company and actually hindering development of 
+                                            client content. The owner had a desire to move into more business-focused online training
+                                            and desired a platform that would scale into global markets.</p>
+
+                                            <p>I recruited engineers and began work on a new platform, designed specifically around the company's 
+                                            creative workflow. I moved user interactives away from Flash, towards HTML5 technologies in consideration 
+                                            of scalability and futureproofing. A bespoke content management system and deployment front-ends were part 
+                                            of my design to manage client content. By automating much of the manual work, we saw production times for 
+                                            online courses drop from several months to several weeks.</p>
+
+                                            <p>Fast forward to 2014, Small World Social is now a multinational company which boasts a multi-award winning 
+                                            online learning system, in use by pharmaceutical and tech companies across the world. 
+                                            
+                                            The platform includes a content management system with tools for clients to self-manage and curate content. 
+                                            Web, html-mobile, native iOS and Google Glass 
+                                            clients integrate with location-based beacon technology to provide training at a user's fingertips in the 
+                                            field. All user activity is tracked and stored to provide information to clients about the performance
+                                            of their content via a comprehensive analytics system developed using crossfilter.js and D3.js.</p>
+
+                                            <p>The backend is a SOA-based system of API services doing discrete tasks, capable of being scaled 
+                                            horizontally through load-balanced API endpoints, communicating directly or via message queues. We used
+                                            MongoDB to provide distributed, scalable data, and Elastic Search for full text indexing. All services
+                                            were built using Node.js. The front-ends use the one-page-app model and are served as static resources to
+                                            the browser directly from Amazon S3, rich content such as video and audio media is delivered through 
+                                            CloudFront.</p>
+
+                                            <p>See <a target='blank' href='http://smallworldsocial.com'>Small World Social</a> for more information.</p>
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>Present</span><span>April 2011</span><span>3 Years</span><span>Co-Founder</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-py" title='I <3 Python, such a lovely language, and amazing community!'></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Pangur Pty Ltd</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Python</li>
+                                            <li>PostgreSQL</li>
+                                            <li>SqlAlchemy</li>
+                                            <li>WSGI</li>
+                                            <li>Werkzeug</li>
+                                            <li>gunicorn</li>
+                                            <li>Jinja2</li>
+                                            <li>Javascript (browser)</li>
+                                            <li>Client side storage</li>
+                                            <li>PayPal</li>
+                                            <li>Node.js</li>
+                                            <li>MongoDB</li>
+                                            <li>Knockout.js</li>
+
+
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p>Designed and developed <a target='blank' href='http://pangurpad.com'>Pangurpad.com</a> with one other person, 
+                                        an online community and writing tool for authors to write and self-publish.</p>
+
+                                        <p>Developed a cross-platform, custom built text editor in Javascript with offline storage.</p>
+
+                                        <p>Developed Pangur, a micro-framework for building web applications in Python with SqlAlchemy and Jinja2
+                                        teemplates. Very simmilar to Flask which came along around the same time.</p>
+
+                                        <p>Took on contracting work and delivered several commercial websites for various clients.</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='12u'>
+                                        <div class='readmore' ng-click="more('pangur')">Read more..</div> 
+                                        <div class='more' ng-class="{open : open['pangur']}">
+
+                                            <p>Founded a company, Pangur Pty Ltd with my business partner Andrew Towers. Being passionate
+                                            about self-publishing and the future of the publishing industry in general, we set to creating
+                                            an online community with tools to support the self-publishing process. We were able to bring
+                                            our product from conception to minimum viable product in five months.</p>
+
+                                            <p>PangurPad is an application that runs in your browser, allowing you to compose your story
+                                            online. It comes with various tools helpful to authors such as notes, character references,
+                                            word counts, reference links and more.</p>
+
+                                            <p>PangurPad is also a community site, with custom built forums for many genres. Users can chat,
+                                            post portions of their stories for review/critique by peers, as well as run writing competitions 
+                                            to hone their writing skills. PangurPad was an official sponsor of the NaNoWriMo writing event in 2011.</p>
+
+                                            <p>PangurPad is built with a Python backend and uses PostgreSQL via SQL Alchemy ORM for storage. 
+                                            In the tradition of WSGI applications, we developed our own micro-framework using many of the POCOO
+                                            libraries and others: Werkzeug, Jinja2. The frontend is a combination of vanilla JS and Ender libs for
+                                            DOM manipulation.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            </li>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>April 2011</span><span>September 2009</span><span>1 &#8532; Years</span><span>Architect / Development Manager</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-py" title="Well I guess you've caught on to my resume easter-egg.."></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Medibank Health Solutions (nee: McKesson Asia Pacific)</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Python</li>
+                                            <li>PostgreSQL</li>
+                                            <li>Twisted</li>
+                                            <li>Javascript</li>
+                                            <li>BuildBot</li>
+                                            <li>Co-lo Ubuntu</li>
+                                            <li>Bash</li>
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p>Managed the transition of the Fitness2Live development team to McKesson Asia Pacific, with the addition of 
+                                        dedicated Business Analysts and Scrum Masters to the team of now 20.</p>
+                                        <p>Implemented Continuous Integration / Continuous Deployment systems using BuildBot for the Be Fit application.</p>
+                                        <p>Advanced the development of the Be Fit application with the addition of a foods/ingredients database and 
+                                        recipe builder that calculated energy per serve, as well as an 'exercise-rules-engine' to calculate energy burned
+                                        for any given kind of exercise/duration.</p>
+                                        <p>Completed Enterprise Architecture and Solutions Architecture training with the Medibank architecture team.</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='12u'>
+                                        <div class='readmore' ng-click="more('medibank')">Read more..</div> 
+                                        <div class='more' ng-class="{open : open['medibank']}">
+                                            <p>Medibank, Australia's largest health insurer, had been using the Fitness2Live application as a white-labeled 
+                                            solution to provide the 
+                                            Better Health Online system to over 4 million Australians. Their acquisition of the platform through
+                                            the sale of McKesson saw a gradual wind-down of the localisation effort and international clients, making it a 
+                                            specific solution for their customers.</p>
+
+                                            <p>Managing the transition of a robust, open-source development team and python product into an enterprise 
+                                            engineering, c#/.NET environment was particularly challenging. During my time as Architect of the Be Fit 
+                                            application within Medibank I built out a continuous integration and deployment platform based on BuildBot.
+                                            This CI system covered code lint, unit test coverage, automated acceptance testing and deployment to staging and 
+                                            production.</p>
+
+                                            <p>Towards the end of my time at Medibank I led an integration between the Be Fit application
+                                            and Medibank's call-center system, allowing web users to arrange callbacks from Nurse On Call telephone staff.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            </li>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>September 2009</span><span>March 2007</span><span>2 &half; Years</span><span>Lead Engineer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-py" title="Did you know that the display length of title attribute in HTML was increased so that engineers could read XKCD hover text?"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Fitness2Live</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Python</li>
+                                            <li>PostgreSQL</li>
+                                            <li>Twisted</li>
+                                            <li>Nevow</li>
+                                            <li>STORM</li>
+                                            <li>Javascript</li>
+                                            <li>Co-lo Ubuntu</li>
+                                            <li>Zope3</li>
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p> Designed and developed a globally distributed, horizontally scalable system for delivering health and wellbeing 
+                                        advice, along with planning and objective tracking. This system, known as the Be Fit platform, was delivered to major 
+                                        Australian and English businesses - Big Four banks, Medibank Private, RACV, Bicycling Victoria, AFL, Deloitte, and 
+                                        others. </p>
+                                        <p>Managed the development and migration from a monolithic, multi-threaded Zope3 system when the Zope ecosystem began
+                                        winding down and became unmaintainable.</p>
+
+                                        <p>Was key in managing risk and expecations during acquisition by McKesson Asia Pacific for my engineering
+                                        team and transitioning development of the Be Fit platform to a new owner.</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='12u'>
+                                        <div class='readmore' ng-click="more('f2l')">Read more..</div> 
+                                        <div class='more' ng-class="{open : open['f2l']}">
+                                            <p>Fitness2Live was an innovative health and fitness startup in Melbourne with several large clients,
+                                            key of which was the national health insurer Medibank. The product was a content management system 
+                                            built on components of the Zope3 framework, a large multi-threaded application written in python. This
+                                            platform was primarily used to provide articles, recipes, health-improvement courses that would last between
+                                            1-6 months, and diet plans.</p>
+
+                                            <p>As the Lead Engineer, I was tasked with expanding the application into other countries, most notably
+                                            the EU which has strict regulations on medical data leaving their borders. With my team of seven developers I 
+                                            designed and developed a distributed CMS which allowed localised content to be curated from Australia and 
+                                            sync'd to clusters in various countries which contained user specific data. Data was anonymised in each
+                                            country, and sync'd back to the central management system for analytics and reporting.</p>
+
+                                            <p>The Be Fit application was built using the Twisted asynchronous networking framework for Python, and
+                                            used Perspective Broker to manage network traffic between international end-node clusters. The relational database
+                                            PostgreSQL was used with the STORM ORM by Canonical Inc.</p>
+
+                                            <p>Fitness2Live was eventually acquired by McKesson Asia Pacific during the GFC. I was critical in the sales 
+                                            process, providing due-dilligence documentation and assisting McKesson's assessors, and my continued involvement 
+                                            in the product as Architect was a pre-sale requirement to the acquisition.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>March 2007</span><span>June 2006</span><span>9 Months</span><span>Lead Developer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-py" title="No, I'm not sure actually, I just made that up, it's a cool story though."></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Nunatak Systems</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Javascript</li>
+                                            <li>Python</li>
+                                            <li>Zope2</li>
+                                            <li>Plone</li>
+                                            <li>Ubuntu Server</li>
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p>Developed the Resi-Care suite of products for managing aged-care facilities, from patient
+                                        medication to patient care and staff rostering.</p>
+                                        <p>Implemented very early single-page app front-end using hidden form posts before XMLHTTPRequest had
+                                        wide-spread adoption. Front-end was almost entirely javascript.</p>
+                                        <p>Built on Zope2 and the Plone CMS platform and targeted early touch-screen tablets for use in wards.</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            </li>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>June 2006</span><span>January 2006</span><span>6 Months</span><span>Senior Engineer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-py" title="You're still reading? this stuff is ancient history, call me up and I'll tell you far more interesting things."></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Revver Inc.</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Python</li>
+                                            <li>Twisted</li>
+                                            <li>PostgreSQL</li>
+                                            <li>Javascript</li>
+                                            <li>MochiKit</li>
+                                            <li>Linux</li>
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p>Developed Revver Inc.'s ATOM/RSS system for video channels.</p>
+                                        <p>Developed what would later be known as 'mashup' widgets to embed video feeds on user's websites using Javascript.</p>
+                                        <p>Prototyped Revver Inc.'s 'web 2.0' UI using MochiKit and Javascript to build a very early single-page app.</p>
+                                        <p>Was involved in the original FireFox Flicks campaign which used Revver Inc. as the video hosting platform, where
+                                        we delivered in excess of 16 TB of video per day for several weeks using Python and Twisted.</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='12u'>
+                                        <div class='readmore' ng-click="more('revver')">Read more..</div> 
+                                        <div class='more' ng-class="{open : open['revver']}">
+
+                                            <p>Revver Inc. was an early contender to YouTube in the online video space, see 
+                                            <a target='blank' href='https://en.wikipedia.org/wiki/Revver'>en.wikipedia.org/wiki/Revver</a>.</p>
+
+                                            <p>Initially built entirely in Python and Twisted with a PostgreSQL backend, the 
+                                            site used server-side rendered templates through the Twisted Nevow library. I was engaged as a contractor
+                                            to initially build their feed system to be integrated with FeedBurner and other startups at that time.</p>
+
+                                            <p>I quickly moved to front-end tasks afterwards, implementing embeddable javascript mashups to display
+                                            video feeds on users' websites. This eventually became the defacto method for displaying video feeds on
+                                            the Revver website itself.</p>
+
+                                            <p>During my time at Revver Inc. we partnered with Mozilla to host the original Firefox Flicks contest, which
+                                            saw video advertisements for Firefox produced and judged by the community. The Firefox Flicks website was a 
+                                            PHP site developed by Mozilla using my mashup/feed widgets. During the campaign we were delivering in excess of
+                                            16 TB of data per day directly through web-facing Python/Twisted servers. This pre-dated cloud infrastructure or
+                                            ready access to CDNs outside of Akamai static hosting.</p>
+
+                                            <p>My involvement at Revver ended when the CEO and CTO decided to rebuild in Ruby, with a 3rd party team
+                                            of contractors.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
+
+
+                            <li>
+                            <time class="cbp_tmtime"><span>January 2006</span><span>December 2002</span><span>3 Years</span><span>Lead Developer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-py" title="Now you're making me feel old :("></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Nunatak Systems</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Python</li>
+                                            <li>Javascript</li>
+                                            <li>Twisted</li>
+                                            <li>BerkleyDB</li>
+                                            <li>CustomDSLs</li>
+                                            <li>PostgreSQL</li>
+                                            <li>Zope2</li>
+                                            <li>Plone</li>
+                                            <li>Bash</li>
+                                            <li>Embedded Linux</li>
+                                            <li>Solaris</li>
+                                            <li>Micro Hardware</li>
+                                            <li>PHP</li>
+                                            <li>MySQL</li>
+                                            <li>LDAP</li>
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p>Lead a team of three, designed and implemented ConveyIT, a python and berkleyDB based
+                                        workflow system which integrated multiple government departments to automate the process of land conveyancing 
+                                        for legal firms. Reduced the conveyancing process from 21 days to 24 hours.</p>
+                                        <p>Worked in a team of six developing a PHP/MySQL embedded Linux office appliance for document storage,
+                                        with hardware RAID and tape backup.</p>
+                                        <p>Built several custom CMS/Websites using Zope2 and Plone for clients including the state minister for IT, 
+                                        the Greens party, and the Antarctic COMNAP secretariat.</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='12u'>
+                                        <div class='readmore' ng-click="more('nunatak')">Read more..</div> 
+                                        <div class='more' ng-class="{open : open['nunatak']}">
+
+                                            <p>I started at Nunatak as a PHP developer working on their embedded Linus document management system
+                                            for small to medium enterprise. This included scripting remote upgrades, controlling hardware and writing 
+                                            tape rotation software.</p>
+
+                                            <p>Later I was promoted to Lead Developer, and implemented ConveyIT for a Tasmanian legal firm to automate
+                                            land conveyancing with a team of 3 engineers. ConveyIT was built using twisted python for networking and web UI,
+                                            and I implemented a noSQL database ontop of BerkleyDB and python's pickle module. ConveyIT became wide spread 
+                                            across the state with 100% uptake form legal firms within 12 months, making Tasmania the first state with a
+                                            fully automated conveyancing system.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>December 2002</span><span>June 2002</span><span>6 Months</span><span>Developer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-php" title="Deary me, PHP. Oh my sordid past."></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Swinburne University - ESTI</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>PHP</li>
+                                            <li>MySQL</li>
+                                            <li>Linux</li>
+                                            <li>Javascript</li>
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p>Prototyped a unique learning management system called DCDS (Dynamic CDs) in PHP. DCDS
+                                        was created at a time when most students used dialup modems, and rich media in online learning 
+                                        such as video was far too heavy. DCDS launched from a CD containing rich media, and connected to
+                                        a web server for dynamic content and user data.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>June 2002</span><span>1999</span><span>2 &half; Years</span><span>Junior Developer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-php" title="Woo, you made it to the end! .. or is it the beginning?"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Cybersource</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Python</li>
+                                            <li>Zope2</li>
+                                            <li>Javascript</li>
+                                            <li>RedHat Server</li>
+                                            <li>PHP</li>
+                                            <li>MySQL</li>
+                                            <li>VB/ASP</li>
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+                                        <p>Worked briefly as a sub contractor for end-user phone support for RedHat Asia Pacific.</p>
+                                        <p>Built teacher survey software for Corriculum Corperation for the Victorian education board.</p>
+                                        <p>Worked with one other developer on a PHP/MySQL realtime/trackside-updated website for Craig Lowndes 
+                                        racing team.</p>
+                                        <p>Developed templates for the Ansett Airlines gold lounge, and the first version of Encarta Encyclopedia 
+                                        Online as a sub-contractor for Sausage Software.</p>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
+
+
+                        </ul>
+
+
+                        <div>
+                        </div>
+                    </section>
+                    <!-- /Features -->
+
+                </div>
+                <!-- /Main -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main Wrapper -->
+
+
+<!-- Footer Wrapper -->
+<div id="footer-wrapper" class="wrapper">
+    <div class="title">Get in touch</div>
+    <div class="container">
+        <div class="row">
+            <div class="12u">
+
+                <!-- Footer -->
+                <div id="footer">
+                    <header class="style1">
+                        <h2>pomke@pangur.com.au</h2>
+                        <h3>+61 3 9742 0873</h3>
+                        <hr />
+                        <p>References available on request.</p>
+                        <p class="byline">Thank you for your time.</p>
+                    </header>
+                </div>
+                <!-- /Footer -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Footer Wrapper -->
+
+</body>
+</html>
