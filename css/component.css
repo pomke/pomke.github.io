@@ -433,3 +433,14 @@ header.style1 h2.resume {
     font-size: 250px;
     opacity: 0.1;
 }
+
+
+.fossstuff li {
+    margin-bottom: 20px;
+}
+
+.fossstuff li img {
+    float: left;
+    margin-right: 10px;
+    
+}

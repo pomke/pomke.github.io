@@ -74,6 +74,34 @@
                         <br/> <br/> <br/> <br/>
                         <!-- /Experience Boxes -->
 
+                        <!-- Opensource/Community  -->
+                        <header class="style1">
+                            <h2>FOSS & Community contributions</h2>
+                            <p class="byline">Useful libraries, conferences and FOSS events I contribute toward.</p>
+                        </header>
+
+                        <ul class='fossstuff'>
+                            <li><img src='http://codekuma.io/images/codekuma.png' width='50px'/> <a href='http://codekuma.io'>codekuma.io</a></br> 
+                                I am a founder and current co-curator of code kuma, a monthly hack night aimed at getting new engineers and 
+                                oldbies working together, sharing experience in a friendly and safe environment.
+                            </li>
+                            
+                            <li><img src='/campjs.png' width='50px'/><a href='http://campjs.com'>CampJS.com</a></br> 
+                                I am a regular mentor at CampJS's Melbourne events where I speak on various topics from hacking to diversity. I am
+                                a memeber of the CampJS Diversity committee and assist in camp setup before the event.
+                            </li>
+
+                            <li><img src='https://raw.githubusercontent.com/hudson-taylor/hudson-taylor.github.io/82a7feb3ec1ab28f95dd7f8255b0161262c4abcc/images/logo.png' width='50px'/><a href='http://hudson-taylor.github.io'>Hudson-Taylor</a></br> 
+                                I created Hudson-Taylor as a simple tool for implementing well defined microservices
+                                using node.js. Today Hudson-Taylor sees close to 1k downloads/month and is used across several projects. 
+ 
+                            <li><img src='https://www.npmjs.com/static/images/npm-logo.svg' width='50px'/><a href='https://www.npmjs.com/~pomke'>Lots of other stuff..</a></br> 
+                                There are a range of useful libraries I have published on NPM which are in use in various projects.
+                                For my older stuff you can always hop over to my <a href='http://github.com/pomke'>Github</a> account.
+                            </li>
+                                                       </li>
+                            
+                        </ul>    
                         <!-- Career Timeline -->
                         <header class="style1">
                             <h2>Career Timeline</h2>
@@ -81,6 +109,77 @@
                         </header>
                         <ul class="cbp_tmtimeline" ng-controller='CareerController'>
 
+                            <li>
+                            <time class="cbp_tmtime"><span>July 2015</span><span>July 2014</span><span>1 year</span><span>Technical<br/>Lead</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-js" title="Witty comment goes here.."></div>
+                            <div class="cbp_tmlabel">
+                                <h2>Etaskr</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Node.js</li>
+                                            <li>MongoDB</li>
+                                            <li>Elastic Search</li>
+                                            <li>Hudson-taylor</li>
+                                            <li>One-Page-Apps</li>
+                                            <li>Rivets</li>
+                                            <li>Mobile</li>
+                                            <li>Saml</li>
+                                            <li>Docker</li>
+                                            <li>Gulp</li>
+                                            <li>Workflow</li>
+
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+
+                                        <p>First hire at a new startup Etaskr, with only two months of existing development by the tech founder
+                                            I came onboard at an early stage as the technical lead / Lead engineer and developed the backend 
+                                            distributed systems required by the etaskr platform.</p>
+
+                                        <p>Designed and built a service oriented (SOA/microservice) framework 
+                                            <a target='blank' href='http://hudson-taylor.github.io'>Hudson-Taylor</a> in node.js which we then
+                                        used to implement the 15-16 different services within Etaskr.</p>
+
+                                    <p>Recruited and lead a team of engineers using agile practices to deliver high value, rapid development to meet
+                                        demanding deadlines for Etaskr's fortune 500 clients.</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='12u'>
+                                        <div class='readmore' ng-click="more('sws')">Read more..</div> 
+                                        <div class='more' ng-class="{open : open['sws']}">
+                                            <p>I arrived at Etaskr in mid 2014, a new startup in the enterprise space based in Melbourne which
+                                                at the time consisted of it's two founders, one technical and one sales focused. Etaskr then was a 
+                                                node.js application with tight coupling between APIs and the data layer, serving a Backbone/JQuery
+                                                front-end.</p>
+
+                                            <p>With a fortune 500 client deadline looming I had to jump into development immediately, opting to 
+                                                take on the backend tasks to free the tech founder up for soley front-end (his Forte). I quickly 
+                                                decided that the complexity of the vision for Etaskr required a modular, service oriented approach
+                                                and prototyped what is now the Hudson-Taylor SOA framework in 18 hours, and begain seperating the 
+                                            backend logic into services while implementing the APIs needed to deliver frontend features.</p>
+
+                                        <p>Over the following 12 months I recruited a team of engineers and built out the service to scale
+                                            initially on AWS and then at the client's request, Dimension Data (An enterprise co-lo) using docker to 
+                                            maintain a consistent platform across production environments..</p>
+
+                                        <p>Etaskr successfully delivered their product within 9 months of commencment to their leading client KPMG Australia.
+                                            Etaskr was then successfully sold to it's investors and over an 8 week period I completed handover to 
+                                            a new development team in Manila who will continue to build Etaskr as a successful enterprise brand.
+                                        </p>
+
+                                            <p>See <a target='blank' href='http://etaskr.com'>etaskr.com</a> for more information.</p>
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
                             <li>
                             <time class="cbp_tmtime"><span>June 2014</span><span>December 2011</span><span>2 &half; years</span><span>Chief<br/>Technical<br/>Officer</span></time>
                             <div class="cbp_tmicon cbp_tmicon-js" title="Node.js is so awesome, no really, it's the knees of bees!"></div>
@@ -589,7 +688,7 @@
                 <!-- Footer -->
                 <div id="footer">
                     <header class="style1">
-                        <h2>pomke@pangur.com.au</h2>
+                        <h2>pomke@pomke.com</h2>
                         <h3>+61 3 9742 0873</h3>
                         <hr />
                         <p>References available on request.</p>
