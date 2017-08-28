@@ -7,11 +7,13 @@
 <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 <script src="js/modernizr.custom.js"></script>
 <script src="js/angular.min.js"></script>
+<script src="js/timesheet.min.js"></script>
 <script src="js/resume.js"></script>
 <link rel="stylesheet" href="css/skel-noscript.css" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 <link rel="stylesheet" href="css/component.css" />
+<link rel="stylesheet" href="css/timesheet.min.css" />
 
 </head>
 <body ng-app='resume' class="homepage">
@@ -28,18 +30,18 @@
                     <section id="features">
                         <header class="style1">
                             <h2 class='resume'>Résumé</h2>
-                            <h2 class='name'>Pomke Nohkan</h2>
+                            <h2 class='name'>Timothy Stebbing</h2>
                             <br/>
                             <br/>
-                            <p class='intro'>Hi there! I am a web architect, engineer and development leader with fifteen years commercial 
+                            <p class='intro'>Hi there! I am a web architect, engineer and development leader with almost two decades commercial 
                             experience building scalable web applications using open source software.  My speciality is the development of 
                             robust systems designed for reliability, security, scalability and maintainability, using modern high-level 
-                            languages such as JavaScript (Node.js) and Python. I am based in the mountains, east of Melbourne, Australia.</p>
+                            languages such as Node.js, Python and Golang. I am based in the mountains, east of Melbourne, Australia.</p>
 
                             <p class='intro'>I'm big on functional and asynchronous programming methodologies for building massively
-                            scalable services. This is why much of my experience has been with frameworks such as Twisted Python and Node.js. 
+                            scalable services. Much of my experience has been with frameworks such as Twisted Python and Node.js. 
                             This doesn't mean I'm unfamiliar with OO or threaded programming, I just believe in the right tools 
-                            for the right job.</p>
+                            for the job.</p>
 
                             <p class='intro'>I am passionate about diversity and love encouraging others to learn programming. I believe the 
                             internet is a tool for liberation that can be given to anyone to empower them to have a voice in the global 
@@ -47,32 +49,63 @@
                             <br/> <br/>
                             <p>
                                 <a target='blank' href='http://github.com/pomke'><span class='faticon icon-github'></span></a>
-                                <a target='blank' href='http://twitter.com/pomke'><span class='faticon icon-twitter'></span></a>
+                                <a target='blank' href='http://github.com/g5095'><span class='faticon icon-github'></span></a>
                             </p>
                         </header>
 
-                        <!-- Experience Boxes -->
+
                         <header class="style1">
                             <h2>Experience Timeline</h2>
-                            <p class="byline">Experience with various tech, click to explore</p>
+                            <p class="byline">Experience with various tech, this is a selection of highlights over the years.</p>
                         </header>
+                        
+                        <div id='timesheet-scroll'>
+                          <div id='timesheet'></div>
+                        </div>
 
-                        <ul class='exp' ng-controller='ExperienceController'>
-                            <li  ng-repeat='year in years'>
-                            <div class='label'>{{ year.year }}</div>
-                            <div class='item w{{item.years}} {{item.id}}' ng-class='{selected : currentItemId == item.id}' ng-repeat='item in year.items' ng-click='expandItem(item)'>
-                                <span><strong>{{item.years}}</strong> years of {{item.title}}</span>
-                                <div class='details o{{sub.offset}} w{{sub.years}}' ng-repeat='sub in item.children'>
-                                    <span><strong>{{sub.years}}y</strong> {{sub.title}}</span>
-                                    <span class='ball left'>&nbsp;</span>
-                                    <span class='ball right'>&nbsp;</span>
-                                </div>
-                            </div>
-                            </li>
-                        </ul>
-                        <div class='clear'></div>
-                        <br/> <br/> <br/> <br/>
-                        <!-- /Experience Boxes -->
+                        <script>
+        new Timesheet('timesheet', 1999, 2017, [
+          ['1999', '09/2004', 'Text Game Development (MUDs)', 'default'],
+          // python
+          ['2001', '2015', 'Python Development', 'lorem'],
+          ['2002', '2011', 'Twisted Matrix', 'lorem'],
+          ['2001', '2010', 'Zope 1/2/3', 'lorem'],
+          ['2010', '2013', 'Django', 'lorem'],
+          ['2012', '2015', 'WSGI / Micro Frameworks', 'lorem'],
+
+          // js
+          ['1999', '09/2006', 'Vanilla DOM (DHTML)', 'ipsum'],
+          ['2005', '09/2011', 'MochiKit', 'ipsum'],
+          ['2007', '09/2009', 'jQuery', 'ipsum'],
+          ['2008', '09/2011', 'Ender.js', 'ipsum'],
+          ['2010', '09/2011', 'knockout.js', 'ipsum'],
+          ['2011', '09/2015', 'Angular.js', 'ipsum'],
+          ['2015', '09/2016', 'Riot.js', 'ipsum'],
+          ['2011', '09/2017', 'Node.js', 'ipsum'],
+          ['1999', '09/2017', 'Front end: HTML / CSS / Javascript', 'ipsum'],
+
+          // DBs
+          ['2001', '2010', 'ZoDB', 'dolor'],
+          ['2002', '2009', 'MySQL', 'dolor'],
+          ['2005', '09/2017', 'PostgreSQL', 'dolor'],
+          ['2006', '09/2008', 'BerkleyDB', 'dolor'],
+          ['2008', '09/2011', 'SqlLite', 'dolor'],
+          ['2008', '09/2012', 'Elastic Search', 'dolor'],
+          ['2012', '09/2013', 'Riak', 'dolor'],
+          ['2012', '09/2015', 'MongoDB', 'dolor'],
+          ['2014', '09/2017', 'REDIS', 'dolor'],
+          // sit
+          ['1999', '09/2017', 'Linux', 'sit'],
+          ['1999', '2002', 'Redhat (Asia-Pac Support)', 'sit'],
+          ['2002', '2006', 'Debian', 'sit'],
+          ['2006', '09/2017', 'Ubuntu', 'sit'],
+          ['2010', '09/2017', 'AWS', 'sit'],
+          // Go
+          ['2017', '09/2017', 'Golang', 'default']
+        ]);
+
+                        </script>
+
 
                         <!-- Opensource/Community  -->
                         <header class="style1">
@@ -81,23 +114,50 @@
                         </header>
 
                         <ul class='fossstuff'>
-                            <li><img src='http://codekuma.io/images/codekuma.png' width='50px'/> <a href='http://codekuma.io'>codekuma.io</a></br> 
-                                I am a founder and current co-curator of code kuma, a monthly hack night aimed at getting new engineers and 
-                                oldbies working together, sharing experience in a friendly and safe environment.
-                            </li>
-                            
-                            <li><img src='/campjs.png' width='50px'/><a href='http://campjs.com'>CampJS.com</a></br> 
-                                I am a regular mentor at CampJS's Melbourne events where I speak on various topics from hacking to diversity. I am
-                                a memeber of the CampJS Diversity committee and assist in camp setup before the event.
+
+                            <li><img src='https://raw.githubusercontent.com/pomke/mog/master/doc/lol.png' width='50px'/><a href='https://www.npmjs.com/package/mog'>MOG</a></br> 
+                              MOG, Modern Object Grammar is a DSL for describing and asserting the state of an object. It aims to 
+                              provide a compact and expressive dialect for defining object schemas with minimal fuss.
                             </li>
 
+                             <li><a href='https://www.npmjs.com/package/rukus'>Rukus</a></br> 
+                               I created Rukus, a system for developing testable component based web applications using riot.js,
+                               Rukus is currently serving millions of users at iflix.
+                            </li> 
+                           
+                            <li><img src='https://raw.githubusercontent.com/g5095/cockrel/master/doc/logo.png' width='50px'/><a href='https://www.npmjs.com/package/cockrel'>Cockrel</a></br> 
+                              Cockrel is a library for building durable asynchronous processing chains. It is plugin extensible and has a strong focus on durability via configurable queues.
+                              Think of Cockrel as the glue between your wonderfully isolated intranet of things.
+                            </li>
+
+                             <li><a href='https://www.npmjs.com/package/reflow'>Reflow</a></br> 
+                               Reflow is a minimalistic workflow system and state machine capable of managing complex workflow 
+                               requirements.
+                            </li> 
+
+                             <li><a href='https://www.npmjs.com/package/feryt'>Feryt</a></br> 
+                               Feryt finds DOM nodes in browser or server-side environments using simple CSS selectors, and asserts 
+                               facts about them.
+                            </li> 
+ 
+                            <li><img src='/campjs.png' width='50px'/><a href='http://campjs.com'>CampJS.com</a></br> 
+                                I am an occasional mentor at CampJS's Melbourne events where I speak on various topics from hacking to diversity. I have been
+                                a memeber of the CampJS Diversity committee.
+                            </li>
+
+                             <li><a href='https://www.npmjs.com/package/attrition'>Attrition</a></br> 
+                               Attrition is a simple queue system that uses a mongoDB collection to store jobs.
+                               Attrition handles task-locking between processes so you can run many instances of a worker service in Node.js
+                            </li> 
+ 
                             <li><img src='https://raw.githubusercontent.com/hudson-taylor/hudson-taylor.github.io/82a7feb3ec1ab28f95dd7f8255b0161262c4abcc/images/logo.png' width='50px'/><a href='http://hudson-taylor.github.io'>Hudson-Taylor</a></br> 
                                 I created Hudson-Taylor as a simple tool for implementing well defined microservices
-                                using node.js. Today Hudson-Taylor sees close to 1k downloads/month and is used across several projects. 
- 
+                                using node.js. Today Hudson-Taylor is used across many large projects and is now maintained by s1w. 
+                            </li> 
+
                             <li><img src='https://www.npmjs.com/static/images/npm-logo.svg' width='50px'/><a href='https://www.npmjs.com/~pomke'>Lots of other stuff..</a></br> 
                                 There are a range of useful libraries I have published on NPM which are in use in various projects.
-                                For my older stuff you can always hop over to my <a href='http://github.com/pomke'>Github</a> account.
+                                For my other stuff you can always hop over to my <a href='http://github.com/pomke'>Github</a> <a href='http://github.com/g5095'>accounts</a>.
                             </li>
                                                        </li>
                             
@@ -108,6 +168,56 @@
                             <p class="byline">Commercial development work</p>
                         </header>
                         <ul class="cbp_tmtimeline" ng-controller='CareerController'>
+
+                            <li>
+                            <time class="cbp_tmtime"><span>Current</span><span>July 2015</span><span>2 years</span><span>Software<br/>Engineer</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-js" title="Do you wanna build a snowman?"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>iflix.com</h2>
+                                <div class='row'>
+                                    <div class='3u keyTech'>
+                                        <p>Core Technology</p>
+                                        <ul>
+                                            <li>Node.js</li>
+                                            <li>Golang</li>
+                                            <li>Postgres</li>
+                                            <li>AWS</li>
+                                            <li>Hudson-taylor</li>
+                                            <li>One-Page-Apps</li>
+                                            <li>Docker</li>
+                                            <li>Microservices</li>
+                                            <li>Big Data</li>
+
+                                        </ul>
+                                    </div>
+                                    <div class='9u short'>
+                                        <p>Achievements</p>
+                                        <p></p>
+
+                                        <p>As one of the first five employees at iflix AU, I have designed and built the account and authentication
+                                        systems which have taken iflix to their first 15 million accounts globally. </p>
+
+                                        <p>Designed and built a component oriented web framework based on riot.js called 
+                                          <a target='blank' href='https://www.npmjs.com/package/rukus'>rukus</a> which has been used
+                                        as the core web framework to deliver the desktop browser experience for millions of users.</p>
+
+                                      <p>Developed the initial A/B testing platform at iflix allowing us to quickly prototype and instrument
+                                      new features for testing on subsets of users.</p>
+
+                                    <p>Developed the first Golang service and championed the introduction of Golang as a target language for 
+                                      microservice development within the tech team.</p>
+
+                                    <p>Mentored many engineers in Node.js, running introductory training for anyone interested in the company. I
+                                      also lead the Backend Gang and drove early adoption of micro-service architecture using the Hudson-Taylor
+                                      framework which the iflix system runs on.</p>
+   
+                                    </div>
+                                </div>
+                              </div>
+                            </li>
+
+
+
 
                             <li>
                             <time class="cbp_tmtime"><span>July 2015</span><span>July 2014</span><span>1 year</span><span>Technical<br/>Lead</span></time>

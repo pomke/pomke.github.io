@@ -1207,3 +1207,14 @@
                     width: 100% !important;
                     top: 180px !important;
                 }
+
+div#timesheet-scroll {
+  overflow-x:scroll;
+  overflow-y:hidden;
+  white-space: nowrap;
+}
+
+div#timesheet {
+  width: 1500px;
+  height: 800px;
+}

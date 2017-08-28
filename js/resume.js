@@ -29,6 +29,7 @@ Resume.controller('ExperienceController', function($scope, $http) {
             var exp = data.exp[i];
             $scope.yearIndex[exp.year].items.push(exp);
         }
+
     });
 
     $scope.expandItem = function(item) {
@@ -39,3 +40,5 @@ Resume.controller('ExperienceController', function($scope, $http) {
         }
     }
 });
+
+
